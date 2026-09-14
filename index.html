@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="color-scheme:light only;">
 <head>
+
 <meta charset="UTF-8">
 
 <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
 <meta name="color-scheme" content="light only">
@@ -15,552 +16,172 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+>
 
 <style>
 
-/* =====================================================
-   FORCE LIGHT THEME
-   Works even if browser / phone is in dark mode
-===================================================== */
+/* ========================================
+   FORCE LIGHT MODE
+======================================== */
 
 :root{
-    color-scheme: light only !important;
-    forced-color-adjust: none;
+    color-scheme:light only !important;
+    forced-color-adjust:none !important;
+
+    --deep:#542839;
+    --pink:#c87591;
 }
 
 html{
-    color-scheme: light only !important;
-    background:#fff;
+    color-scheme:light only !important;
+    background:#fff !important;
 }
 
 body{
-    color-scheme: light only !important;
+    color-scheme:light only !important;
+    forced-color-adjust:none !important;
 }
 
 
-/* =====================================================
-   RESET
-===================================================== */
+/* ========================================
+   BASIC
+======================================== */
 
 *{
-    margin:0;
-    padding:0;
     box-sizing:border-box;
     -webkit-tap-highlight-color:transparent;
+    -webkit-touch-callout:none;
 }
 
 html,
 body{
     width:100%;
     height:100%;
+    margin:0;
+    padding:0;
+
     overflow:hidden;
+
+    background:#fff;
+
+    color:var(--deep);
+
+    font-family:"DM Sans",sans-serif;
 }
 
 body{
-    font-family:"DM Sans",sans-serif;
-    color:#fff;
-    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle at 14% 11%,
+            rgba(255,207,224,.58),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 89% 15%,
+            rgba(255,231,197,.46),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 96%,
+            rgba(244,208,223,.43),
+            transparent 39%
+        ),
+
+        #fff;
 }
 
 
-/* =====================================================
-   MAIN PAGE
-===================================================== */
+/* ========================================
+   GLITTER
+======================================== */
 
-.page{
+.glitter{
     position:fixed;
+
     inset:0;
+
+    z-index:1;
+
     overflow:hidden;
-    isolation:isolate;
-
-    background:
-        radial-gradient(
-            circle at 14% 18%,
-            rgba(255,255,255,.88),
-            transparent 23%
-        ),
-        radial-gradient(
-            circle at 86% 78%,
-            rgba(255,245,248,.88),
-            transparent 25%
-        ),
-        linear-gradient(
-            135deg,
-            #4b071c 0%,
-            #7b1237 28%,
-            #a91d4e 55%,
-            #6d0b30 78%,
-            #3b0517 100%
-        );
-}
-
-
-/* =====================================================
-   SOFT WHITE PATCHES
-===================================================== */
-
-.page::before{
-    content:"";
-    position:absolute;
-
-    width:75vw;
-    height:75vw;
-
-    max-width:720px;
-    max-height:720px;
-
-    left:-20%;
-    top:-22%;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.40) 0%,
-            rgba(255,255,255,.20) 23%,
-            rgba(255,230,238,.09) 45%,
-            transparent 70%
-        );
-
-    filter:blur(25px);
-
-    animation:
-        whitePatchOne 12s ease-in-out infinite alternate;
-
-    z-index:-4;
-}
-
-
-.page::after{
-    content:"";
-    position:absolute;
-
-    width:78vw;
-    height:78vw;
-
-    max-width:760px;
-    max-height:760px;
-
-    right:-28%;
-    bottom:-30%;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.34) 0%,
-            rgba(255,238,244,.16) 25%,
-            rgba(255,255,255,.07) 45%,
-            transparent 70%
-        );
-
-    filter:blur(30px);
-
-    animation:
-        whitePatchTwo 15s ease-in-out infinite alternate;
-
-    z-index:-4;
-}
-
-
-@keyframes whitePatchOne{
-
-    0%{
-        transform:translate(0,0) scale(1);
-    }
-
-    50%{
-        transform:translate(13%,9%) scale(1.15);
-    }
-
-    100%{
-        transform:translate(-4%,18%) scale(.96);
-    }
-}
-
-
-@keyframes whitePatchTwo{
-
-    0%{
-        transform:translate(0,0) scale(1);
-    }
-
-    50%{
-        transform:translate(-12%,-8%) scale(1.17);
-    }
-
-    100%{
-        transform:translate(4%,-14%) scale(.96);
-    }
-}
-
-
-/* =====================================================
-   MOVING AMBIENT GRADIENT
-===================================================== */
-
-.ambient{
-    position:absolute;
-    inset:-25%;
-
-    z-index:-3;
-
-    background:
-        radial-gradient(
-            circle at 20% 30%,
-            rgba(255,255,255,.22),
-            transparent 18%
-        ),
-        radial-gradient(
-            circle at 75% 20%,
-            rgba(255,110,155,.25),
-            transparent 22%
-        ),
-        radial-gradient(
-            circle at 50% 82%,
-            rgba(255,235,242,.18),
-            transparent 21%
-        ),
-        radial-gradient(
-            circle at 88% 70%,
-            rgba(70,0,30,.30),
-            transparent 25%
-        );
-
-    filter:blur(55px);
-
-    animation:
-        ambientMove 18s ease-in-out infinite alternate;
-}
-
-
-@keyframes ambientMove{
-
-    0%{
-        transform:
-            rotate(0deg)
-            scale(1);
-    }
-
-    100%{
-        transform:
-            rotate(12deg)
-            scale(1.12)
-            translate(-2%,2%);
-    }
-}
-
-
-/* =====================================================
-   SPARKLES
-===================================================== */
-
-.sparkles{
-    position:absolute;
-    inset:0;
 
     pointer-events:none;
-
-    z-index:5;
 }
 
-.sparkles span{
+.spark{
     position:absolute;
 
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:#dfa2b7;
+
+    opacity:0;
+
+    animation:
+        floatSpark linear infinite;
+}
+
+.spark:nth-child(3n){
     width:3px;
     height:3px;
 
-    border-radius:50%;
-
-    background:rgba(255,255,255,.95);
-
-    box-shadow:
-        0 0 10px rgba(255,255,255,.95);
-
-    animation:
-        twinkle 3s ease-in-out infinite;
+    background:#e2b97c;
 }
 
-.sparkles span:nth-child(1){
-    left:12%;
-    top:17%;
-    animation-delay:.3s;
+.spark:nth-child(4n){
+    width:5px;
+    height:5px;
+
+    background:#e9b4c5;
 }
 
-.sparkles span:nth-child(2){
-    left:82%;
-    top:15%;
-    animation-delay:1.1s;
-}
+@keyframes floatSpark{
 
-.sparkles span:nth-child(3){
-    left:90%;
-    top:48%;
-    animation-delay:1.8s;
-}
+    0%{
+        opacity:0;
 
-.sparkles span:nth-child(4){
-    left:8%;
-    top:67%;
-    animation-delay:2.3s;
-}
-
-.sparkles span:nth-child(5){
-    left:23%;
-    top:82%;
-    animation-delay:.8s;
-}
-
-.sparkles span:nth-child(6){
-    left:72%;
-    top:85%;
-    animation-delay:1.5s;
-}
-
-.sparkles span:nth-child(7){
-    left:47%;
-    top:9%;
-    animation-delay:2.1s;
-}
-
-
-@keyframes twinkle{
-
-    0%,100%{
-        opacity:.15;
-        transform:scale(.7);
+        transform:
+            translate3d(0,108vh,0);
     }
 
-    50%{
-        opacity:1;
-        transform:scale(1.5);
+    15%{
+        opacity:.6;
+    }
+
+    80%{
+        opacity:.5;
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translate3d(7px,-12vh,0);
     }
 }
 
 
-/* =====================================================
-   HOME
-===================================================== */
+/* ========================================
+   START PAGE
+======================================== */
 
 .home{
     position:absolute;
+
     inset:0;
 
-    display:flex;
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:25px;
-
-    transition:
-        opacity .75s ease,
-        transform .75s ease,
-        visibility .75s ease;
-}
-
-
-.home.hide{
-    opacity:0;
-
-    transform:scale(1.04);
-
-    visibility:hidden;
-
-    pointer-events:none;
-}
-
-
-/* =====================================================
-   HEADING
-===================================================== */
-
-.heading{
-    text-align:center;
-
-    margin-bottom:30px;
-
-    z-index:3;
-}
-
-.small-title{
-    font-size:11px;
-
-    letter-spacing:5px;
-
-    text-transform:uppercase;
-
-    opacity:.78;
-
-    margin-bottom:11px;
-}
-
-
-.heading h1{
-    font-family:"Playfair Display",serif;
-
-    font-size:
-        clamp(40px,7vw,72px);
-
-    line-height:1.02;
-
-    font-weight:400;
-
-    letter-spacing:-1.5px;
-
-    text-shadow:
-        0 5px 30px rgba(45,0,18,.28);
-}
-
-
-.heading h1 em{
-    font-family:"Cormorant Garamond",serif;
-
-    font-weight:400;
-
-    font-size:1.15em;
-}
-
-
-.subtitle{
-    margin-top:16px;
-
-    max-width:430px;
-
-    font-size:13px;
-
-    line-height:1.7;
-
-    font-weight:300;
-
-    opacity:.86;
-}
-
-
-.subtitle em{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:19px;
-}
-
-
-/* =====================================================
-   ENVELOPE AREA
-===================================================== */
-
-.envelope-wrap{
-    position:relative;
-
-    width:min(380px,82vw);
-
-    height:min(275px,59vw);
-
-    min-height:205px;
-
-    perspective:1200px;
-
-    z-index:4;
-}
-
-
-/* =====================================================
-   ENVELOPE
-===================================================== */
-
-.envelope{
-    position:absolute;
-    inset:0;
-
-    cursor:pointer;
-
-    transform-style:preserve-3d;
-}
-
-
-/* =====================================================
-   ENVELOPE SHADOW
-===================================================== */
-
-.envelope-shadow{
-    position:absolute;
-
-    left:7%;
-    right:7%;
-
-    bottom:-18px;
-
-    height:35px;
-
-    background:rgba(25,0,12,.42);
-
-    filter:blur(18px);
-
-    border-radius:50%;
-
-    transition:
-        transform .95s cubic-bezier(.22,.75,.25,1),
-        opacity .95s ease;
-}
-
-
-.envelope.open .envelope-shadow{
-    transform:scale(.86);
-
-    opacity:.52;
-}
-
-
-/* =====================================================
-   MAIN ENVELOPE BODY
-===================================================== */
-
-.env-body{
-    position:absolute;
-    inset:0;
-
-    overflow:hidden;
-
-    border-radius:8px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.34),
-            rgba(255,240,245,.13) 42%,
-            rgba(110,5,40,.35)
-        );
-
-    border:1px solid rgba(255,255,255,.34);
-
-    box-shadow:
-        0 25px 65px rgba(35,0,17,.38),
-        inset 0 1px rgba(255,255,255,.40);
-
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-
-    z-index:2;
-}
-
-
-/* =====================================================
-   INNER CARD
-===================================================== */
-
-.card{
-    position:absolute;
-
-    width:72%;
-    height:72%;
-
-    left:14%;
-    top:14%;
-
-    z-index:3;
+    z-index:5;
 
     display:flex;
 
@@ -569,276 +190,362 @@ body{
     align-items:center;
 
     justify-content:center;
-
-    text-align:center;
 
     padding:20px;
 
-    border-radius:13px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.42),
-            rgba(255,255,255,.15)
-        );
-
-    border:1px solid rgba(255,255,255,.58);
-
-    box-shadow:
-        0 15px 35px rgba(45,0,20,.25),
-        inset 0 1px rgba(255,255,255,.60);
-
-    backdrop-filter:
-        blur(17px)
-        saturate(150%);
-
-    -webkit-backdrop-filter:
-        blur(17px)
-        saturate(150%);
-
-
-    /*
-       CLOSED:
-       card is completely hidden.
-    */
-
-    opacity:0;
-
-    transform:
-        translateY(45px)
-        scale(.88);
-
-    pointer-events:none;
-
-
-    /*
-       Same duration as flap.
-    */
-
-    transition:
-        transform .95s cubic-bezier(.22,.75,.25,1),
-        opacity .55s ease;
-}
-
-
-.card::before{
-    content:"";
-
-    position:absolute;
-
-    inset:1px;
-
-    border-radius:12px;
-
-    background:
-        radial-gradient(
-            circle at 25% 15%,
-            rgba(255,255,255,.34),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 85%,
-            rgba(255,160,195,.18),
-            transparent 35%
-        );
-
-    pointer-events:none;
-}
-
-
-/*
-   OPEN:
-   card movement starts together with flap.
-*/
-
-.envelope.open .card{
-
     opacity:1;
 
+    visibility:visible;
+
     transform:
-        translateY(-30px)
+        translate3d(0,0,0)
         scale(1);
 
-    pointer-events:auto;
+    transition:
+        opacity .65s cubic-bezier(.25,1,.5,1),
+        transform .65s cubic-bezier(.25,1,.5,1),
+        visibility 0s;
+}
 
-    transition-delay:.38s;
+.home.leave{
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translate3d(0,-20px,0)
+        scale(.96);
+
+    pointer-events:none;
+
+    transition:
+        opacity .65s cubic-bezier(.25,1,.5,1),
+        transform .65s cubic-bezier(.25,1,.5,1),
+        visibility 0s linear .65s;
 }
 
 
-.card .mini-heart{
-    position:relative;
+/* ========================================
+   START PAGE TEXT
+======================================== */
 
-    font-size:22px;
+.kicker{
+    margin:0 0 10px;
 
-    margin-bottom:7px;
+    color:#b96d87;
 
-    text-shadow:
-        0 0 18px rgba(255,170,205,.8);
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2.5px;
+
+    text-transform:uppercase;
+
+    text-align:center;
 }
 
+.title{
+    margin:0;
 
-.card h2{
-    position:relative;
+    color:#542839;
 
-    font-family:"Cormorant Garamond",serif;
+    font-family:"Playfair Display",serif;
 
     font-size:
-        clamp(23px,5vw,31px);
+        clamp(29px,7.8vw,42px);
 
-    font-weight:500;
+    line-height:1.08;
 
-    line-height:1;
+    text-align:center;
+}
 
-    margin-bottom:7px;
+.title span{
+    color:#c87591;
+}
+
+.subtitle{
+    max-width:310px;
+
+    margin:12px auto 14px;
+
+    color:#896d77;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    text-align:center;
 }
 
 
-.card p{
+/* ========================================
+   ENVELOPE
+======================================== */
+
+.scene{
+    width:min(82vw,300px);
+
+    aspect-ratio:1.55;
+
+    perspective:1600px;
+
+    margin:0;
+}
+
+.envelope{
     position:relative;
 
-    font-family:"Cormorant Garamond",serif;
+    width:100%;
+    height:100%;
 
-    font-size:14px;
+    transform-style:preserve-3d;
 
-    font-style:italic;
+    cursor:pointer;
 
-    opacity:.80;
-
-    line-height:1.3;
+    filter:
+        drop-shadow(
+            0 14px 20px
+            rgba(91,37,58,.16)
+        );
 }
 
 
-/* =====================================================
-   ENVELOPE FOLDS
-===================================================== */
+/* ========================================
+   BODY
+======================================== */
 
-.env-left-fold{
+.body{
     position:absolute;
 
     inset:0;
 
-    z-index:7;
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 100%,
-            0 100%
-        );
+    z-index:1;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.30),
-            rgba(255,220,232,.08) 55%,
-            rgba(85,2,30,.28)
+            #f5bdce 0%,
+            #e99db4 52%,
+            #da809d 100%
         );
 
-    border-bottom-left-radius:8px;
+    border:
+        1px solid
+        rgba(116,47,71,.18);
+
+    border-radius:10px;
+
+    overflow:hidden;
 }
 
 
-.env-right-fold{
+/* ========================================
+   INSIDE
+======================================== */
+
+.inside{
     position:absolute;
 
     inset:0;
 
-    z-index:7;
-
-    clip-path:
-        polygon(
-            100% 0,
-            100% 100%,
-            0 100%
-        );
-
-    background:
-        linear-gradient(
-            215deg,
-            rgba(255,255,255,.28),
-            rgba(255,215,230,.07) 55%,
-            rgba(78,2,27,.32)
-        );
-
-    border-bottom-right-radius:8px;
-}
-
-
-.env-bottom-fold{
-    position:absolute;
-
-    inset:0;
-
-    z-index:8;
-
-    clip-path:
-        polygon(
-            0 100%,
-            50% 43%,
-            100% 100%
-        );
+    z-index:2;
 
     background:
         linear-gradient(
             180deg,
-            rgba(255,255,255,.27),
-            rgba(255,220,230,.08) 55%,
-            rgba(72,2,26,.28)
+            #b85c7d 0%,
+            #d67a99 42%,
+            #e59ab1 100%
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 50%
         );
 }
 
 
-/* =====================================================
-   FLAP
-===================================================== */
+/* ========================================
+   SMALL CARD
+======================================== */
+
+.card{
+    position:absolute;
+
+    left:9%;
+    top:18%;
+
+    width:82%;
+    height:73%;
+
+    z-index:3;
+
+    background:
+        linear-gradient(
+            155deg,
+            #fffefa,
+            #fff8f1
+        );
+
+    border:
+        1px solid
+        rgba(168,101,122,.2);
+
+    border-radius:8px;
+
+    box-shadow:
+        0 4px 10px
+        rgba(76,30,48,.1);
+
+    padding:16px;
+
+    transform:
+        translateY(22%);
+
+    opacity:0;
+
+    transition:
+        transform 1s cubic-bezier(.18,.78,.2,1),
+        opacity .25s ease;
+
+    pointer-events:none;
+}
+
+.card h2{
+    margin:0 0 6px;
+
+    font-family:"Playfair Display",serif;
+
+    color:#542839;
+
+    font-size:17px;
+}
+
+.card p{
+    margin:0;
+
+    color:#896d77;
+
+    font-size:11.5px;
+
+    line-height:1.45;
+}
+
+
+/* ========================================
+   LEFT FOLD
+======================================== */
+
+.left{
+    position:absolute;
+
+    inset:0;
+
+    z-index:7;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7c5d4,
+            #dc829e
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 50%,
+            0 100%
+        );
+}
+
+
+/* ========================================
+   RIGHT FOLD
+======================================== */
+
+.right{
+    position:absolute;
+
+    inset:0;
+
+    z-index:7;
+
+    background:
+        linear-gradient(
+            225deg,
+            #f9ccd9,
+            #df89a3
+        );
+
+    clip-path:
+        polygon(
+            100% 0,
+            50% 50%,
+            100% 100%
+        );
+}
+
+
+/* ========================================
+   BOTTOM FLAP
+======================================== */
+
+.bottom{
+    position:absolute;
+
+    inset:0;
+
+    z-index:10;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ec9eb6 0%,
+            #e28da7 55%,
+            #cb718f 100%
+        );
+
+    clip-path:
+        polygon(
+            0 100%,
+            50% 49.8%,
+            100% 100%
+        );
+
+    filter:
+        drop-shadow(
+            0 -2px 3px
+            rgba(80,25,45,.15)
+        );
+}
+
+
+/* ========================================
+   TOP FLAP
+======================================== */
 
 .flap{
     position:absolute;
 
-    top:0;
     left:0;
+    top:0;
 
     width:100%;
     height:55%;
 
-    z-index:10;
+    z-index:20;
 
     transform-origin:50% 0%;
 
     transform-style:preserve-3d;
 
-
-    /*
-       EXACT SAME DURATION AS CARD.
-    */
+    transform:rotateX(0deg);
 
     transition:
-        transform .95s cubic-bezier(.22,.75,.25,1);
-}
-
-
-/*
-   LIVE 3D OPEN
-*/
-
-.envelope.open .flap{
-    transform:rotateX(-155deg);
-}
-
-
-/* =====================================================
-   FLAP FRONT / BACK
-===================================================== */
-
-.flap-front,
-.flap-back{
-    position:absolute;
-
-    inset:0;
-
-    backface-visibility:hidden;
-    -webkit-backface-visibility:hidden;
+        transform 1.35s cubic-bezier(.18,.75,.18,1);
 
     clip-path:
         polygon(
@@ -847,123 +554,120 @@ body{
             50% 100%
         );
 
-    border-radius:8px 8px 0 0;
+    backface-visibility:visible;
 }
 
-
 .flap-front{
+    position:absolute;
+
+    inset:0;
 
     background:
         linear-gradient(
             155deg,
-            rgba(255,255,255,.48) 0%,
-            rgba(255,235,242,.18) 42%,
-            rgba(112,5,40,.34) 100%
+            #fcd2df 0%,
+            #f1a7be 48%,
+            #dc829e 100%
         );
 
-    border:1px solid rgba(255,255,255,.34);
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
 
-    box-shadow:
-        inset 0 1px rgba(255,255,255,.50),
-        0 8px 22px rgba(40,0,20,.12);
+    backface-visibility:hidden;
+
+    filter:
+        drop-shadow(
+            0 3px 5px
+            rgba(80,25,45,.18)
+        );
 }
 
-
 .flap-back{
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            25deg,
+            #d27995 0%,
+            #e79ab3 60%,
+            #fcd2df 100%
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
 
     transform:rotateX(180deg);
 
-    background:
-        linear-gradient(
-            155deg,
-            rgba(255,255,255,.38),
-            rgba(255,220,232,.13),
-            rgba(75,2,28,.38)
-        );
+    backface-visibility:hidden;
 }
 
 
-/*
-   No visible hinge strip.
-*/
+/* ========================================
+   OPEN
+======================================== */
 
-.flap-front::after{
-    content:"";
+.envelope.open .flap{
+    transform:rotateX(-145deg);
+}
 
-    position:absolute;
+.envelope.open .card{
+    transform:translateY(-15%);
 
-    left:0;
-    right:0;
+    opacity:1;
 
-    bottom:0;
+    transition-delay:.65s;
 
-    height:18px;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(255,255,255,.07)
-        );
-
-    filter:blur(3px);
-
-    pointer-events:none;
+    pointer-events:auto;
 }
 
 
-/* =====================================================
-   TAP HINT
-===================================================== */
+/* ========================================
+   HINT
+======================================== */
 
-.tap-hint{
-    margin-top:31px;
+.hint{
+    min-height:18px;
 
-    font-size:10px;
+    margin-top:13px;
 
-    letter-spacing:3px;
+    color:#996b7a;
 
-    text-transform:uppercase;
+    font-size:11.5px;
 
-    opacity:.65;
+    text-align:center;
 
-    animation:
-        hintPulse 2.5s ease-in-out infinite;
+    transition:opacity .3s ease;
 }
 
 
-@keyframes hintPulse{
-
-    0%,100%{
-        opacity:.35;
-    }
-
-    50%{
-        opacity:.75;
-    }
-}
-
-
-/* =====================================================
-   LETTER SCREEN
-===================================================== */
+/* ========================================
+   SECOND PAGE
+======================================== */
 
 .letter-screen{
     position:absolute;
 
     inset:0;
 
+    z-index:15;
+
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    padding:
-        max(22px,env(safe-area-inset-top))
-        max(20px,env(safe-area-inset-right))
-        max(22px,env(safe-area-inset-bottom))
-        max(20px,env(safe-area-inset-left));
-
+    padding:15px;
 
     opacity:0;
 
@@ -971,854 +675,598 @@ body{
 
     pointer-events:none;
 
-    transform:scale(1.025);
-
+    transform:
+        translate3d(0,25px,0)
+        scale(.95);
 
     transition:
-        opacity .8s ease,
-        transform .8s ease,
-        visibility .8s ease;
+        opacity .65s cubic-bezier(.25,1,.5,1),
+        transform .65s cubic-bezier(.25,1,.5,1),
+        visibility 0s linear .65s;
 }
 
-
-.letter-screen.show{
-
+.letter-screen.visible{
     opacity:1;
 
     visibility:visible;
 
     pointer-events:auto;
 
-    transform:scale(1);
+    transform:
+        translate3d(0,0,0)
+        scale(1);
+
+    transition:
+        opacity .65s cubic-bezier(.25,1,.5,1),
+        transform .65s cubic-bezier(.25,1,.5,1),
+        visibility 0s;
 }
 
 
-/* =====================================================
-   MOVING GRADIENT BEHIND LETTER
-===================================================== */
+.letter-wrap{
+    width:min(94vw,430px);
 
-.letter-screen::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:95vw;
-    height:95vw;
-
-    max-width:900px;
-    max-height:900px;
-
-    border-radius:50%;
-
-    background:
-        conic-gradient(
-            from 0deg,
-            rgba(255,255,255,.28),
-            rgba(255,70,135,.28),
-            rgba(125,0,48,.30),
-            rgba(255,220,232,.28),
-            rgba(255,255,255,.22),
-            rgba(255,70,135,.28)
-        );
-
-    filter:blur(65px);
-
-    animation:
-        gradientSpin 16s linear infinite;
-
-    z-index:-2;
-}
-
-
-@keyframes gradientSpin{
-
-    from{
-        transform:rotate(0deg) scale(1);
-    }
-
-    to{
-        transform:rotate(360deg) scale(1.12);
-    }
-}
-
-
-/* =====================================================
-   WHITE PATCHES BEHIND LETTER
-===================================================== */
-
-.letter-screen::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-15%;
-
-    background:
-
-        radial-gradient(
-            circle at 20% 22%,
-            rgba(255,255,255,.40),
-            transparent 17%
-        ),
-
-        radial-gradient(
-            circle at 78% 24%,
-            rgba(255,240,246,.28),
-            transparent 20%
-        ),
-
-        radial-gradient(
-            circle at 80% 82%,
-            rgba(255,255,255,.32),
-            transparent 18%
-        ),
-
-        radial-gradient(
-            circle at 18% 80%,
-            rgba(255,150,185,.20),
-            transparent 22%
-        );
-
-    filter:blur(45px);
-
-    animation:
-        patchFloat 11s ease-in-out infinite alternate;
-
-    z-index:-3;
-}
-
-
-@keyframes patchFloat{
-
-    from{
-        transform:
-            translate(-2%,-1%)
-            scale(1);
-    }
-
-    to{
-        transform:
-            translate(3%,2%)
-            scale(1.08);
-    }
-}
-
-
-/* =====================================================
-   GLASS LETTER CARD
-===================================================== */
-
-.letter-paper{
-
-    position:relative;
-
-    width:min(620px,92vw);
-
-    /*
-       Keeps the entire card inside viewport.
-    */
-
-    max-height:
-        min(82vh,760px);
-
-    padding:
-        clamp(25px,5vw,48px);
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.34),
-            rgba(255,255,255,.14) 50%,
-            rgba(255,225,235,.20)
-        );
-
-
-    border:1px solid rgba(255,255,255,.62);
-
-
-    box-shadow:
-        0 30px 90px rgba(55,0,25,.35),
-        inset 0 1px rgba(255,255,255,.65),
-        inset 0 -1px rgba(255,255,255,.15);
-
-
-    backdrop-filter:
-        blur(30px)
-        saturate(160%);
-
-    -webkit-backdrop-filter:
-        blur(30px)
-        saturate(160%);
-
-
-    text-align:center;
+    height:auto;
 
     display:flex;
 
-    flex-direction:column;
+    align-items:center;
 
     justify-content:center;
 }
 
 
-/* =====================================================
-   CARD GLOW
-===================================================== */
+/* ========================================
+   LETTER CARD
+======================================== */
 
-.letter-paper::before{
+.letter-paper{
+    position:relative;
 
-    content:"";
+    width:100%;
 
-    position:absolute;
+    height:auto;
 
-    width:240px;
-    height:240px;
+    max-height:
+        calc(100vh - 30px);
 
-    top:-125px;
-    right:-80px;
+    overflow:hidden;
 
-    border-radius:50%;
+    padding:
+        24px 25px 20px;
+
+    border:
+        1px solid
+        rgba(176,108,130,.16);
+
+    border-radius:18px;
 
     background:
-        rgba(255,255,255,.25);
+        linear-gradient(
+            155deg,
+            #fffefb 0%,
+            #fffaf4 74%,
+            #fff7ef 100%
+        );
 
-    filter:blur(30px);
+    box-shadow:
+        0 14px 35px
+        rgba(92,37,57,.11),
 
-    pointer-events:none;
+        inset 0 1px
+        rgba(255,255,255,.95);
+
+    display:block;
 }
 
 
-/* =====================================================
-   GLASS SHINE
-===================================================== */
-
-.letter-paper::after{
-
+.letter-paper::before{
     content:"";
 
     position:absolute;
 
-    left:-40%;
-    top:0;
+    left:25px;
+    right:25px;
+    top:9px;
 
-    width:35%;
-    height:100%;
+    height:2px;
+
+    border-radius:10px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.20),
+            #e7aabe,
             transparent
         );
+}
 
-    transform:skewX(-18deg);
 
-    animation:
-        glassShine 7s ease-in-out infinite;
+.letter-paper::after{
+    content:"♡";
+
+    position:absolute;
+
+    right:15px;
+    bottom:12px;
+
+    color:#edcbd6;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:28px;
 
     pointer-events:none;
 }
 
 
-@keyframes glassShine{
+/* ========================================
+   DATE
+======================================== */
 
-    0%,55%{
-        left:-40%;
-    }
+.letter-date{
+    margin:0;
 
-    100%{
-        left:120%;
-    }
+    color:#b96d86;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
 }
 
 
-/* =====================================================
-   LETTER CONTENT
-===================================================== */
+/* ========================================
+   TITLE
+======================================== */
 
-.letter-inner{
-
+.letter-paper h2{
     position:relative;
 
     z-index:2;
-}
 
+    margin:
+        7px 0 11px;
 
-.letter-top{
-
-    font-size:10px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    opacity:.72;
-
-    margin-bottom:14px;
-}
-
-
-.letter-paper h1{
+    color:#562a3a;
 
     font-family:"Playfair Display",serif;
 
     font-size:
-        clamp(32px,7vw,53px);
+        clamp(23px,3.5vh,29px);
 
-    line-height:1.08;
-
-    font-weight:400;
-
-    margin-bottom:18px;
-
-    text-shadow:
-        0 5px 25px rgba(45,0,20,.18);
+    line-height:1.05;
 }
 
 
-.letter-paper h1 span{
+/* ========================================
+   LETTER TEXT
+======================================== */
 
-    font-family:"Cormorant Garamond",serif;
+.letter-paper p{
+    position:relative;
 
-    font-style:italic;
-}
+    z-index:2;
 
+    margin:
+        0 0 8px;
 
-.letter-text{
-
-    font-family:"Cormorant Garamond",serif;
+    color:#705862;
 
     font-size:
-        clamp(17px,3vw,21px);
+        clamp(11px,1.55vh,13.2px);
 
-    line-height:1.48;
+    line-height:1.46;
 
-    font-weight:400;
-
-    color:
-        rgba(255,248,250,.98);
+    user-select:text;
 }
 
 
-.letter-text p{
+.letter-paper .love{
+    color:#aa5573;
 
-    margin-bottom:12px;
-}
+    font-family:"Playfair Display",serif;
 
+    font-size:
+        clamp(11.3px,1.6vh,14px);
 
-.letter-text p:last-child{
+    line-height:1.42;
 
-    margin-bottom:0;
+    margin:
+        0 0 8px;
 }
 
 
 .signature{
+    margin:
+        2px 0 10px !important;
 
-    margin-top:22px;
+    color:#ab5674 !important;
 
-    font-family:"Cormorant Garamond",serif;
+    font-family:"Playfair Display",serif;
 
-    font-size:24px;
+    font-size:
+        clamp(11.5px,1.65vh,14px) !important;
 
-    font-style:italic;
-
-    opacity:.94;
+    line-height:1.35 !important;
 }
 
 
-/* =====================================================
+/* ========================================
    BACK BUTTON
-===================================================== */
+======================================== */
 
 .back-btn{
+    display:block;
 
-    position:absolute;
+    margin:
+        4px auto 0;
 
-    top:20px;
-    left:20px;
+    padding:
+        9px 19px;
 
-    z-index:10;
+    border:none;
 
-    border:
-        1px solid rgba(255,255,255,.38);
-
-    background:
-        rgba(255,255,255,.16);
+    border-radius:999px;
 
     color:#fff;
 
-    border-radius:50px;
+    background:
+        linear-gradient(
+            145deg,
+            #d98ca6,
+            #c16b89 47%,
+            #a34b6b
+        );
 
-    padding:9px 15px;
+    box-shadow:
+        0 8px 18px
+        rgba(151,67,97,.2),
 
-    font-family:"DM Sans",sans-serif;
+        inset 0 1px
+        rgba(255,255,255,.4);
 
-    font-size:10px;
+    font-size:11.5px;
 
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-
-    backdrop-filter:blur(12px);
-
-    -webkit-backdrop-filter:blur(12px);
+    font-weight:700;
 
     cursor:pointer;
 
-    opacity:.82;
+    transition:
+        transform .15s ease;
+}
 
-    transition:.3s ease;
+.back-btn:active{
+    transform:scale(.96);
 }
 
 
-.back-btn:hover{
-
-    background:
-        rgba(255,255,255,.26);
-
-    opacity:1;
-
-    transform:translateY(-1px);
-}
-
-
-/* =====================================================
+/* ========================================
    FLOATING HEARTS
-===================================================== */
+======================================== */
 
 .float-heart{
-
     position:fixed;
-
-    pointer-events:none;
 
     z-index:50;
 
-    font-size:17px;
+    color:#d47d99;
 
-    color:#fff;
-
-    text-shadow:
-        0 0 12px rgba(255,130,175,.8);
+    pointer-events:none;
 
     animation:
-        heartUp 1.5s ease-out forwards;
+        heartFloat 1.1s ease-out forwards;
 }
 
-
-@keyframes heartUp{
+@keyframes heartFloat{
 
     0%{
         opacity:0;
 
         transform:
-            translate(-50%,0)
+            translate3d(0,0,0)
             scale(.5);
     }
 
     15%{
-        opacity:1;
+        opacity:.7;
     }
 
     100%{
         opacity:0;
 
         transform:
-            translate(-50%,-110px)
-            scale(1.2)
-            rotate(15deg);
+            translate3d(
+                var(--x),
+                -100px,
+                0
+            )
+            rotate(var(--r))
+            scale(1.15);
     }
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* ========================================
+   TAP SPARK
+======================================== */
 
-@media(max-width:600px){
+.tap-spark{
+    position:fixed;
+
+    z-index:60;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:#dda1b7;
+
+    pointer-events:none;
+
+    animation:
+        tapSpark .45s ease forwards;
+}
+
+@keyframes tapSpark{
+
+    from{
+        opacity:.8;
+
+        transform:
+            translate3d(0,0,0);
+    }
+
+    to{
+        opacity:0;
+
+        transform:
+            translate3d(
+                var(--x),
+                var(--y),
+                0
+            )
+            scale(.1);
+    }
+}
+
+
+/* ========================================
+   SMALL HEIGHT DEVICES
+======================================== */
+
+@media(max-height:650px){
 
     .home{
-        padding:18px;
+        padding:
+            15px 18px;
     }
 
+    .kicker{
+        margin-bottom:7px;
 
-    .heading{
-        margin-bottom:25px;
-    }
-
-
-    .small-title{
         font-size:9px;
-
-        letter-spacing:4px;
     }
 
-
-    .heading h1{
-        font-size:
-            clamp(38px,11vw,55px);
+    .title{
+        font-size:28px;
     }
-
 
     .subtitle{
-        font-size:12px;
+        margin:
+            8px auto 10px;
 
-        line-height:1.55;
-
-        margin-top:13px;
-
-        max-width:330px;
+        font-size:11px;
     }
 
-
-    .subtitle em{
-        font-size:17px;
+    .scene{
+        width:min(78vw,285px);
     }
 
+    .hint{
+        margin-top:9px;
 
-    .envelope-wrap{
-
-        width:82vw;
-
-        height:57vw;
-
-        min-height:190px;
-
-        max-height:260px;
-    }
-
-
-    .card{
-
-        width:70%;
-
-        height:68%;
-
-        left:15%;
-
-        top:15%;
-
-        padding:14px;
-    }
-
-
-    .card .mini-heart{
-
-        font-size:18px;
-
-        margin-bottom:4px;
-    }
-
-
-    .card h2{
-
-        font-size:24px;
-
-        margin-bottom:4px;
-    }
-
-
-    .card p{
-
-        font-size:13px;
-    }
-
-
-    .tap-hint{
-
-        margin-top:25px;
-
-        font-size:9px;
-
-        letter-spacing:2.5px;
+        font-size:10.5px;
     }
 
 
     /* LETTER */
 
     .letter-screen{
-
-        padding:
-            48px 16px 18px;
+        padding:10px;
     }
-
 
     .letter-paper{
-
-        width:100%;
-
-        max-width:560px;
-
-        max-height:
-            calc(100vh - 72px);
-
         padding:
-            25px 20px;
-
-        border-radius:21px;
+            18px 19px 15px;
     }
 
+    .letter-paper h2{
+        margin:
+            5px 0 8px;
 
-    .letter-top{
-
-        font-size:8px;
-
-        letter-spacing:3px;
-
-        margin-bottom:9px;
+        font-size:22px;
     }
 
+    .letter-paper p{
+        font-size:10.5px;
 
-    .letter-paper h1{
+        line-height:1.34;
 
-        font-size:
-            clamp(29px,9vw,42px);
-
-        margin-bottom:13px;
+        margin-bottom:6px;
     }
 
+    .letter-paper .love{
+        font-size:11px;
 
-    .letter-text{
+        line-height:1.34;
 
-        font-size:
-            clamp(15px,4.5vw,19px);
-
-        line-height:1.37;
+        margin-bottom:6px;
     }
-
-
-    .letter-text p{
-
-        margin-bottom:9px;
-    }
-
 
     .signature{
+        font-size:11px !important;
 
-        margin-top:14px;
-
-        font-size:21px;
+        margin-bottom:7px !important;
     }
-
 
     .back-btn{
+        padding:
+            8px 17px;
 
-        top:12px;
+        font-size:10.5px;
+    }
+}
 
-        left:13px;
 
-        padding:8px 12px;
+/* ========================================
+   VERY SHORT DEVICES
+======================================== */
 
+@media(max-height:560px){
+
+    .home{
+        padding:
+            10px 15px;
+    }
+
+    .kicker{
+        margin-bottom:5px;
+    }
+
+    .title{
+        font-size:25px;
+    }
+
+    .subtitle{
+        margin:
+            5px auto 7px;
+
+        font-size:10px;
+    }
+
+    .scene{
+        width:min(70vw,245px);
+    }
+
+    .hint{
+        margin-top:6px;
+
+        font-size:10px;
+    }
+
+
+    /* LETTER */
+
+    .letter-screen{
+        padding:8px;
+    }
+
+    .letter-paper{
+        padding:
+            13px 15px 11px;
+    }
+
+    .letter-date{
         font-size:8px;
     }
-}
 
+    .letter-paper h2{
+        font-size:20px;
 
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
-@media(max-width:380px){
-
-    .heading{
-        margin-bottom:19px;
+        margin:
+            3px 0 5px;
     }
 
+    .letter-paper p{
+        font-size:9.5px;
 
-    .heading h1{
-        font-size:36px;
+        line-height:1.28;
+
+        margin-bottom:4px;
     }
 
+    .letter-paper .love{
+        font-size:10px;
 
-    .subtitle{
-        font-size:11px;
+        line-height:1.28;
+
+        margin-bottom:4px;
     }
-
-
-    .envelope-wrap{
-
-        min-height:165px;
-    }
-
-
-    .tap-hint{
-        margin-top:18px;
-    }
-
-
-    .letter-screen{
-
-        padding-top:43px;
-
-        padding-left:12px;
-
-        padding-right:12px;
-    }
-
-
-    .letter-paper{
-
-        padding:
-            20px 16px;
-
-        max-height:
-            calc(100vh - 63px);
-    }
-
-
-    .letter-paper h1{
-
-        font-size:28px;
-
-        margin-bottom:10px;
-    }
-
-
-    .letter-text{
-
-        font-size:14px;
-
-        line-height:1.32;
-    }
-
-
-    .letter-text p{
-
-        margin-bottom:7px;
-    }
-
 
     .signature{
+        font-size:9.8px !important;
 
-        margin-top:10px;
-
-        font-size:19px;
-    }
-}
-
-
-/* =====================================================
-   SHORT SCREEN
-===================================================== */
-
-@media(max-height:650px){
-
-    .heading{
-        margin-bottom:15px;
+        margin-bottom:5px !important;
     }
 
-
-    .small-title{
-        margin-bottom:6px;
-    }
-
-
-    .heading h1{
-        font-size:36px;
-    }
-
-
-    .subtitle{
-
-        margin-top:8px;
-
-        line-height:1.35;
-    }
-
-
-    .envelope-wrap{
-
-        width:min(330px,72vw);
-
-        height:min(235px,52vw);
-
-        min-height:175px;
-    }
-
-
-    .tap-hint{
-
-        margin-top:15px;
-    }
-
-
-    .letter-screen{
-
-        padding-top:38px;
-
-        padding-bottom:10px;
-    }
-
-
-    .letter-paper{
-
-        max-height:
-            calc(100vh - 48px);
-
+    .back-btn{
         padding:
-            18px 22px;
-    }
+            7px 15px;
 
-
-    .letter-top{
-        margin-bottom:6px;
-    }
-
-
-    .letter-paper h1{
-
-        font-size:30px;
-
-        margin-bottom:8px;
-    }
-
-
-    .letter-text{
-
-        font-size:15px;
-
-        line-height:1.3;
-    }
-
-
-    .letter-text p{
-
-        margin-bottom:6px;
-    }
-
-
-    .signature{
-
-        margin-top:8px;
-
-        font-size:19px;
+        font-size:9.5px;
     }
 }
 
 
-/* =====================================================
-   FORCE NO DARK-MODE OVERRIDE
-===================================================== */
+/* ========================================
+   DARK MODE:
+   DO NOT CHANGE ANYTHING
+======================================== */
 
 @media(prefers-color-scheme:dark){
 
-    :root,
-    html,
-    body{
+    :root{
+        color-scheme:light only !important;
+        forced-color-adjust:none !important;
+    }
+
+    html{
         color-scheme:light only !important;
         background:#fff !important;
     }
 
     body{
-        color:#fff !important;
+        color-scheme:light only !important;
+        forced-color-adjust:none !important;
+
+        background:
+            radial-gradient(
+                circle at 14% 11%,
+                rgba(255,207,224,.58),
+                transparent 31%
+            ),
+
+            radial-gradient(
+                circle at 89% 15%,
+                rgba(255,231,197,.46),
+                transparent 28%
+            ),
+
+            radial-gradient(
+                circle at 50% 96%,
+                rgba(244,208,223,.43),
+                transparent 39%
+            ),
+
+            #fff !important;
+
+        color:#542839 !important;
+    }
+
+    .page,
+    .home,
+    .letter-screen,
+    .scene,
+    .envelope,
+    .letter-paper{
+        color-scheme:light only !important;
+        forced-color-adjust:none !important;
     }
 }
 
@@ -1828,243 +1276,246 @@ body{
 
 <body>
 
-<div class="page">
 
-    <div class="ambient"></div>
+<!-- ========================================
+     GLITTER
+======================================== -->
+
+<div
+    class="glitter"
+    id="glitter">
+</div>
 
 
-    <!-- SPARKLES -->
+<!-- ========================================
+     START PAGE
+======================================== -->
 
-    <div class="sparkles">
+<section
+    class="home"
+    id="home"
+>
 
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+
+    <div class="kicker">
+        Apke liye mera chota sa letter
+    </div>
+
+
+    <h1 class="title">
+
+        Happy Birthday<br>
+
+        <span>
+            Meri Wiffy Punu Ko ♡
+        </span>
+
+    </h1>
+
+
+    <p class="subtitle">
+
+        Apke liy kuch h envelope<br>
+
+        me joh mein chahta hun ap pdo.
+
+    </p>
+
+
+    <!-- ENVELOPE -->
+
+    <div class="scene">
+
+        <div
+            class="envelope"
+            id="envelope"
+        >
+
+
+            <div class="body"></div>
+
+
+            <div class="inside"></div>
+
+
+            <!-- SMALL CARD -->
+
+            <div
+                class="card"
+                id="card"
+            >
+
+                <h2>
+                    For Punu ❤️
+                </h2>
+
+                <p>
+                    Yhn dbao letter pdne k liy ♡
+                </p>
+
+            </div>
+
+
+            <div class="left"></div>
+
+
+            <div class="right"></div>
+
+
+            <div class="bottom"></div>
+
+
+            <!-- TOP FLAP -->
+
+            <div class="flap">
+
+                <div class="flap-front"></div>
+
+                <div class="flap-back"></div>
+
+            </div>
+
+
+        </div>
 
     </div>
 
 
-    <!-- =================================================
-         HOME
-    ================================================== -->
-
-    <section class="home" id="home">
-
-        <div class="heading">
-
-            <div class="small-title">
-                a little something for you
-            </div>
-
-
-            <h1>
-                Happy Birthday<br>
-                <em>Punu ♡</em>
-            </h1>
-
-
-            <div class="subtitle">
-
-                There's something inside this envelope<br>
-
-                <em>
-                    that I wanted you to read.
-                </em>
-
-            </div>
-
-        </div>
-
-
-        <!-- ENVELOPE -->
-
-        <div class="envelope-wrap">
-
-            <div class="envelope-shadow"></div>
-
-
-            <div class="envelope" id="envelope">
-
-
-                <!-- ENVELOPE BODY -->
-
-                <div class="env-body">
-
-
-                    <!-- SMALL CARD -->
-
-                    <div class="card" id="openCard">
-
-                        <div class="mini-heart">
-                            ♡
-                        </div>
-
-
-                        <h2>
-                            For You
-                        </h2>
-
-
-                        <p>
-                            tap to open my heart
-                        </p>
-
-                    </div>
-
-
-                    <!-- FOLDS -->
-
-                    <div class="env-left-fold"></div>
-
-                    <div class="env-right-fold"></div>
-
-                    <div class="env-bottom-fold"></div>
-
-
-                </div>
-
-
-                <!-- FLAP -->
-
-                <div class="flap">
-
-                    <div class="flap-front"></div>
-
-                    <div class="flap-back"></div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <div class="tap-hint">
-            tap the envelope
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         LETTER PAGE
-    ================================================== -->
-
-    <section
-        class="letter-screen"
-        id="letterScreen"
+    <div
+        class="hint"
+        id="hint"
     >
+        is envelope ko dbao pdne k liy ♡
+    </div>
 
 
-        <button
-            class="back-btn"
-            id="backBtn"
-        >
-            ← back
-        </button>
+</section>
+
+
+
+<!-- ========================================
+     SECOND PAGE
+======================================== -->
+
+<section
+    class="letter-screen"
+    id="letterScreen"
+>
+
+
+    <div class="letter-wrap">
 
 
         <div class="letter-paper">
 
-            <div class="letter-inner">
 
-
-                <div class="letter-top">
-                    just for you ♡
-                </div>
-
-
-                <h1>
-
-                    Happy Birthday,<br>
-
-                    <span>
-                        my Punu
-                    </span>
-
-                </h1>
-
-
-                <div class="letter-text">
-
-
-                    <p>
-                        I hope this birthday brings you all the
-                        little happiness that you deserve.
-                    </p>
-
-
-                    <p>
-                        Thank you for being such a beautiful part
-                        of my life. Some people simply make
-                        ordinary moments feel a little more special.
-                    </p>
-
-
-                    <p>
-                        I wish you endless smiles, peaceful days,
-                        big dreams, and all the love your heart
-                        can hold.
-                    </p>
-
-
-                    <p>
-                        And today, more than anything, I just want
-                        you to know how special you are to me.
-                    </p>
-
-
-                </div>
-
-
-                <div class="signature">
-                    With lots of love ♡
-                </div>
-
-
+            <div class="letter-date">
+                On your special day ♡
             </div>
+
+
+            <h2>
+                Dear Punu,
+            </h2>
+
+
+            <p>
+                Happy Birthday to you apke liy mere dil me bhot khas jgh h.
+                Aj k din apke liy ek reminder h ki tum kitne khubsurat ho
+                joh exist krte ho meri life me.
+            </p>
+
+
+            <p>
+                I hope k aj ke sth apke sbhi days peaceful ho,
+                unexpected smiles, beautiful memories, and countless
+                little moments that make your heart genuinely happy.
+            </p>
+
+
+            <p>
+                Kese bhi apka mere sth hona mere liy bhot sari feelings
+                le ata h. Your smile, the way you are yourself, and even
+                the smallest things about you have a habit of staying
+                in my mind.
+            </p>
+
+
+            <p class="love">
+                Maybe I don't say it enough, but you mean more to me
+                than these few words could ever explain. ♡
+            </p>
+
+
+            <p>
+                Ap sb kuch deserve krte ho — sbhi kushiya, ache log,
+                sb kuch. Toh kbhi mt feel krna ki tum enough nhi.
+                Never stop choosing the things that make your eyes
+                light up na ki apki ankhe sujhaye.
+            </p>
+
+
+            <p>
+                Make a beautiful wish today, smile a little more,
+                laugh a little louder, and keep this day as one of
+                those memories you'll always love looking back on.
+            </p>
+
+
+            <p class="love">
+                Happy Birthday, Punu. I hope life is extra gentle
+                with you this year — because you deserve that and
+                so much more or meri gltiyo ko bhi maf krdiya krna
+                <b>Love you so much</b>. ♡
+            </p>
+
+
+            <p class="signature">
+                With lots of love,<br>
+                who cares about you and loves about you apka kuku ♡
+            </p>
+
+
+            <button
+                class="back-btn"
+                id="backBtn"
+            >
+                Back to envelope ♡
+            </button>
+
 
         </div>
 
-    </section>
+    </div>
 
-</div>
+</section>
 
 
-<!-- =====================================================
+
+<!-- ========================================
      MUSIC
-===================================================== -->
+======================================== -->
 
 <audio
-    id="themeMusic"
+    id="themeSong"
+    src="theme.mp3"
     loop
-    preload="auto"
->
-    <source
-        src="theme.mp3"
-        type="audio/mpeg"
-    >
+    preload="auto">
 </audio>
 
 
 
 <script>
 
-/* =====================================================
+/* ========================================
    ELEMENTS
-===================================================== */
+======================================== */
 
 const envelope =
     document.getElementById("envelope");
 
 const card =
-    document.getElementById("openCard");
+    document.getElementById("card");
 
 const home =
     document.getElementById("home");
@@ -2075,71 +1526,147 @@ const letterScreen =
 const backBtn =
     document.getElementById("backBtn");
 
-const music =
-    document.getElementById("themeMusic");
+const hint =
+    document.getElementById("hint");
+
+const themeSong =
+    document.getElementById("themeSong");
+
+const glitter =
+    document.getElementById("glitter");
 
 
-let opened = false;
+let isOpen = false;
+
+let moving = false;
 
 
+/* ========================================
+   MUSIC
+======================================== */
 
-/* =====================================================
-   OPEN / CLOSE ENVELOPE
-===================================================== */
+function startMusic(){
+
+    if(themeSong.paused){
+
+        themeSong
+            .play()
+            .catch(()=>{});
+
+    }
+
+}
+
+
+window.addEventListener(
+    "load",
+    startMusic
+);
+
+document.addEventListener(
+    "pointerdown",
+    startMusic,
+    {once:true}
+);
+
+
+/* ========================================
+   GLITTER
+======================================== */
+
+for(
+    let i = 0;
+    i < 20;
+    i++
+){
+
+    const spark =
+        document.createElement("div");
+
+    spark.className =
+        "spark";
+
+    spark.style.left =
+        Math.random() * 100 + "%";
+
+    spark.style.animationDuration =
+        (
+            8 +
+            Math.random() * 10
+        ) + "s";
+
+    spark.style.animationDelay =
+        (
+            -Math.random() * 16
+        ) + "s";
+
+    glitter.appendChild(spark);
+
+}
+
+
+/* ========================================
+   ENVELOPE
+======================================== */
 
 envelope.addEventListener(
     "click",
     function(e){
 
-        /*
-           If the small card itself
-           was clicked, don't close envelope.
-        */
-
         if(
-            e.target.closest(".card")
+            e.target.closest(".card") ||
+            moving
         ){
             return;
         }
 
 
-        opened = !opened;
+        startMusic();
 
 
-        envelope.classList.toggle(
-            "open",
-            opened
-        );
+        if(!isOpen){
 
+            moving = true;
 
-        if(opened){
-
-            createHearts(
-                e.clientX,
-                e.clientY
+            envelope.classList.add(
+                "open"
             );
 
+            isOpen = true;
 
-            /*
-               Start music after user interaction.
-            */
-
-            music.volume = .35;
+            hint.textContent =
+                "Tap the card to read letter ♡";
 
 
-            const playPromise =
-                music.play();
+            setTimeout(
+                ()=>{
+                    moving = false;
+                },
+                1600
+            );
+
+        }
+
+        else{
+
+            moving = true;
+
+            envelope.classList.remove(
+                "open"
+            );
+
+            isOpen = false;
+
+            hint.textContent =
+                "Tap the envelope to open ♡";
 
 
-            if(
-                playPromise !== undefined
-            ){
-
-                playPromise.catch(
-                    ()=>{}
-                );
-
-            }
+            setTimeout(
+                ()=>{
+                    moving = false;
+                },
+                1450
+            );
 
         }
 
@@ -2147,10 +1674,9 @@ envelope.addEventListener(
 );
 
 
-
-/* =====================================================
-   SMALL CARD -> NEXT PAGE
-===================================================== */
+/* ========================================
+   CARD -> LETTER
+======================================== */
 
 card.addEventListener(
     "click",
@@ -2159,72 +1685,61 @@ card.addEventListener(
         e.stopPropagation();
 
 
-        if(!opened){
+        if(!isOpen){
             return;
         }
 
 
-        createHearts(
-            e.clientX,
-            e.clientY
+        home.classList.add(
+            "leave"
         );
 
-
-        /*
-           Tiny delay makes the tap feel connected
-           to the card opening.
-        */
 
         setTimeout(
             ()=>{
 
-                home.classList.add(
-                    "hide"
+                letterScreen.classList.add(
+                    "visible"
                 );
 
-                letterScreen.classList.add(
-                    "show"
-                );
+                createHearts();
 
             },
-            180
+            450
         );
 
     }
 );
 
 
-
-/* =====================================================
-   BACK BUTTON
-===================================================== */
+/* ========================================
+   BACK
+======================================== */
 
 backBtn.addEventListener(
     "click",
     function(){
 
         letterScreen.classList.remove(
-            "show"
+            "visible"
         );
 
 
         setTimeout(
             ()=>{
 
-                home.classList.remove(
-                    "hide"
-                );
-
-
-                /*
-                   Reset envelope.
-                */
-
                 envelope.classList.remove(
                     "open"
                 );
 
-                opened = false;
+                isOpen = false;
+
+                hint.textContent =
+                    "is envelope ko dbao pdne k liy ♡";
+
+                home.classList.remove(
+                    "leave"
+                );
 
             },
             500
@@ -2234,183 +1749,151 @@ backBtn.addEventListener(
 );
 
 
-
-/* =====================================================
+/* ========================================
    FLOATING HEARTS
-===================================================== */
+======================================== */
 
-function createHearts(x,y){
-
-    const symbols = [
-        "♡",
-        "♥",
-        "✦",
-        "⋆"
-    ];
-
+function createHearts(){
 
     for(
         let i = 0;
-        i < 5;
+        i < 7;
         i++
     ){
 
         const heart =
             document.createElement("div");
 
-
         heart.className =
             "float-heart";
 
-
         heart.textContent =
-            symbols[
-                Math.floor(
-                    Math.random() *
-                    symbols.length
-                )
-            ];
-
+            Math.random() > .45
+            ? "♡"
+            : "♥";
 
         heart.style.left =
             (
-                x +
-                (Math.random()*60-30)
-            ) + "px";
-
+                38 +
+                Math.random() * 24
+            ) + "vw";
 
         heart.style.top =
             (
-                y +
-                (Math.random()*25-10)
+                52 +
+                Math.random() * 8
+            ) + "vh";
+
+        heart.style.fontSize =
+            (
+                12 +
+                Math.random() * 10
             ) + "px";
 
-
-        heart.style.animationDelay =
+        heart.style.setProperty(
+            "--x",
             (
-                Math.random()*.15
-            ) + "s";
+                (Math.random()-.5) *
+                75
+            ) + "px"
+        );
 
+        heart.style.setProperty(
+            "--r",
+            (
+                (Math.random()-.5) *
+                40
+            ) + "deg"
+        );
 
         document.body.appendChild(
             heart
         );
 
-
         setTimeout(
             ()=>{
                 heart.remove();
             },
-            1700
+            1250
         );
 
     }
+
 }
 
 
-
-/* =====================================================
-   CLICK SPARKLE
-===================================================== */
-
-document.addEventListener(
-    "click",
-    function(e){
-
-        const sparkle =
-            document.createElement("div");
-
-
-        sparkle.style.position =
-            "fixed";
-
-
-        sparkle.style.left =
-            e.clientX + "px";
-
-
-        sparkle.style.top =
-            e.clientY + "px";
-
-
-        sparkle.style.width =
-            "4px";
-
-
-        sparkle.style.height =
-            "4px";
-
-
-        sparkle.style.borderRadius =
-            "50%";
-
-
-        sparkle.style.background =
-            "rgba(255,255,255,.95)";
-
-
-        sparkle.style.boxShadow =
-            "0 0 12px rgba(255,255,255,.95)";
-
-
-        sparkle.style.pointerEvents =
-            "none";
-
-
-        sparkle.style.zIndex =
-            "100";
-
-
-        sparkle.style.transform =
-            "translate(-50%,-50%) scale(0)";
-
-
-        sparkle.style.transition =
-            "transform .45s ease, opacity .45s ease";
-
-
-        document.body.appendChild(
-            sparkle
-        );
-
-
-        requestAnimationFrame(
-            ()=>{
-
-                sparkle.style.transform =
-                    "translate(-50%,-50%) scale(2.5)";
-
-                sparkle.style.opacity =
-                    "0";
-
-            }
-        );
-
-
-        setTimeout(
-            ()=>{
-                sparkle.remove();
-            },
-            500
-        );
-
-    }
-);
-
-
-
-/* =====================================================
-   PREVENT IMAGE / ELEMENT DRAG
-===================================================== */
+/* ========================================
+   TAP SPARKS
+======================================== */
 
 document.addEventListener(
-    "dragstart",
-    function(e){
-        e.preventDefault();
+    "pointerdown",
+    e => {
+
+        for(
+            let i = 0;
+            i < 3;
+            i++
+        ){
+
+            const particle =
+                document.createElement("div");
+
+            particle.className =
+                "tap-spark";
+
+            particle.style.left =
+                e.clientX + "px";
+
+            particle.style.top =
+                e.clientY + "px";
+
+
+            const angle =
+                Math.random()
+                * Math.PI
+                * 2;
+
+
+            const distance =
+                15 +
+                Math.random() * 20;
+
+
+            particle.style.setProperty(
+                "--x",
+                Math.cos(angle)
+                * distance
+                + "px"
+            );
+
+
+            particle.style.setProperty(
+                "--y",
+                Math.sin(angle)
+                * distance
+                + "px"
+            );
+
+
+            document.body.appendChild(
+                particle
+            );
+
+
+            setTimeout(
+                ()=>{
+                    particle.remove();
+                },
+                450
+            );
+
+        }
+
     }
 );
 
 </script>
 
 </body>
-    </html>
+</html>
