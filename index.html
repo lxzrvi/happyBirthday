@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme:light">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+>
+
+<title>For Punu ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+/* ========================================
+   BASIC
+======================================== */
+
+:root{
+    color-scheme:light only;
+
+    --deep:#542839;
+    --pink:#c87591;
+}
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-touch-callout:none;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    color:var(--deep);
+
+    font-family:"DM Sans",sans-serif;
+}
+
+body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle at 14% 11%,
+            rgba(255,207,224,.58),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 89% 15%,
+            rgba(255,231,197,.46),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 96%,
+            rgba(244,208,223,.43),
+            transparent 39%
+        ),
+
+        #fff;
+}
+
+
+/* ========================================
+   GLITTER
+======================================== */
+
+.glitter{
+    position:fixed;
+
+    inset:0;
+
+    z-index:1;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+.spark{
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:#dfa2b7;
+
+    opacity:0;
+
+    animation:
+        floatSpark linear infinite;
+}
+
+.spark:nth-child(3n){
+    width:3px;
+    height:3px;
+
+    background:#e2b97c;
+}
+
+.spark:nth-child(4n){
+    width:5px;
+    height:5px;
+
+    background:#e9b4c5;
+}
+
+@keyframes floatSpark{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translate3d(0,108vh,0);
+    }
+
+    15%{
+        opacity:.6;
+    }
+
+    80%{
+        opacity:.5;
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translate3d(7px,-12vh,0);
+    }
+}
+
+
+/* ========================================
+   START PAGE
+======================================== */
+
+.home{
+    position:absolute;
+
+    inset:0;
+
+    z-index:5;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translate3d(0,0,0)
+        scale(1);
+
+    transition:
+        opacity .65s cubic-bezier(.25,1,.5,1),
+        transform .65s cubic-bezier(.25,1,.5,1),
+        visibility 0s;
+}
+
+.home.leave{
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translate3d(0,-20px,0)
+        scale(.96);
+
+    pointer-events:none;
+
+    transition:
+        opacity .65s cubic-bezier(.25,1,.5,1),
+        transform .65s cubic-bezier(.25,1,.5,1),
+        visibility 0s linear .65s;
+}
+
+
+/* ========================================
+   START PAGE TEXT
+======================================== */
+
+.kicker{
+    margin:0 0 10px;
+
+    color:#b96d87;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2.5px;
+
+    text-transform:uppercase;
+
+    text-align:center;
+}
+
+.title{
+    margin:0;
+
+    color:#542839;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(29px,7.8vw,42px);
+
+    line-height:1.08;
+
+    text-align:center;
+}
+
+.title span{
+    color:#c87591;
+}
+
+.subtitle{
+    max-width:310px;
+
+    margin:12px auto 14px;
+
+    color:#896d77;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    text-align:center;
+}
+
+
+/* ========================================
+   ENVELOPE
+======================================== */
+
+.scene{
+    width:min(82vw,300px);
+
+    aspect-ratio:1.55;
+
+    perspective:1600px;
+
+    margin:0;
+}
+
+.envelope{
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    transform-style:preserve-3d;
+
+    cursor:pointer;
+
+    filter:
+        drop-shadow(
+            0 14px 20px
+            rgba(91,37,58,.16)
+        );
+}
+
+
+/* BODY */
+
+.body{
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5bdce 0%,
+            #e99db4 52%,
+            #da809d 100%
+        );
+
+    border:
+        1px solid
+        rgba(116,47,71,.18);
+
+    border-radius:10px;
+
+    overflow:hidden;
+}
+
+
+/* INSIDE */
+
+.inside{
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    background:
+        linear-gradient(
+            180deg,
+            #b85c7d 0%,
+            #d67a99 42%,
+            #e59ab1 100%
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 50%
+        );
+}
+
+
+/* ========================================
+   SMALL CARD INSIDE ENVELOPE
+======================================== */
+
+.card{
+    position:absolute;
+
+    left:9%;
+    top:18%;
+
+    width:82%;
+    height:73%;
+
+    z-index:3;
+
+    background:
+        linear-gradient(
+            155deg,
+            #fffefa,
+            #fff8f1
+        );
+
+    border:
+        1px solid
+        rgba(168,101,122,.2);
+
+    border-radius:8px;
+
+    box-shadow:
+        0 4px 10px
+        rgba(76,30,48,.1);
+
+    padding:16px;
+
+    transform:
+        translateY(22%);
+
+    opacity:0;
+
+    transition:
+        transform 1s cubic-bezier(.18,.78,.2,1),
+        opacity .25s ease;
+
+    pointer-events:none;
+}
+
+.card h2{
+    margin:0 0 6px;
+
+    font-family:"Playfair Display",serif;
+
+    color:#542839;
+
+    font-size:17px;
+}
+
+.card p{
+    margin:0;
+
+    color:#896d77;
+
+    font-size:11.5px;
+
+    line-height:1.45;
+}
+
+
+/* LEFT FOLD */
+
+.left{
+    position:absolute;
+
+    inset:0;
+
+    z-index:7;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7c5d4,
+            #dc829e
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 50%,
+            0 100%
+        );
+}
+
+
+/* RIGHT FOLD */
+
+.right{
+    position:absolute;
+
+    inset:0;
+
+    z-index:7;
+
+    background:
+        linear-gradient(
+            225deg,
+            #f9ccd9,
+            #df89a3
+        );
+
+    clip-path:
+        polygon(
+            100% 0,
+            50% 50%,
+            100% 100%
+        );
+}
+
+
+/* BOTTOM FLAP */
+
+.bottom{
+    position:absolute;
+
+    inset:0;
+
+    z-index:10;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ec9eb6 0%,
+            #e28da7 55%,
+            #cb718f 100%
+        );
+
+    clip-path:
+        polygon(
+            0 100%,
+            50% 49.8%,
+            100% 100%
+        );
+
+    filter:
+        drop-shadow(
+            0 -2px 3px
+            rgba(80,25,45,.15)
+        );
+}
+
+
+/* TOP FLAP */
+
+.flap{
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:55%;
+
+    z-index:20;
+
+    transform-origin:50% 0%;
+
+    transform-style:preserve-3d;
+
+    transform:rotateX(0deg);
+
+    transition:
+        transform 1.35s cubic-bezier(.18,.75,.18,1);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    backface-visibility:visible;
+}
+
+.flap-front{
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            155deg,
+            #fcd2df 0%,
+            #f1a7be 48%,
+            #dc829e 100%
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    backface-visibility:hidden;
+
+    filter:
+        drop-shadow(
+            0 3px 5px
+            rgba(80,25,45,.18)
+        );
+}
+
+.flap-back{
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            25deg,
+            #d27995 0%,
+            #e79ab3 60%,
+            #fcd2df 100%
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform:rotateX(180deg);
+
+    backface-visibility:hidden;
+}
+
+
+/* OPEN */
+
+.envelope.open .flap{
+    transform:rotateX(-145deg);
+}
+
+.envelope.open .card{
+    transform:translateY(-15%);
+
+    opacity:1;
+
+    transition-delay:.65s;
+
+    pointer-events:auto;
+}
+
+
+/* HINT */
+
+.hint{
+    min-height:18px;
+
+    margin-top:13px;
+
+    color:#996b7a;
+
+    font-size:11.5px;
+
+    text-align:center;
+
+    transition:opacity .3s ease;
+}
+
+
+/* ========================================
+   SECOND PAGE
+   CONTENT SIZE + CENTER
+======================================== */
+
+.letter-screen{
+    position:absolute;
+
+    inset:0;
+
+    z-index:15;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+        15px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transform:
+        translate3d(0,25px,0)
+        scale(.95);
+
+    transition:
+        opacity .65s cubic-bezier(.25,1,.5,1),
+        transform .65s cubic-bezier(.25,1,.5,1),
+        visibility 0s linear .65s;
+}
+
+.letter-screen.visible{
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:
+        translate3d(0,0,0)
+        scale(1);
+
+    transition:
+        opacity .65s cubic-bezier(.25,1,.5,1),
+        transform .65s cubic-bezier(.25,1,.5,1),
+        visibility 0s;
+}
+
+
+/* CONTENT KE ACCORDING */
+
+.letter-wrap{
+    width:min(94vw,430px);
+
+    height:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+/* ========================================
+   LETTER CARD
+======================================== */
+
+.letter-paper{
+    position:relative;
+
+    width:100%;
+
+    /*
+      Height content ke according
+    */
+    height:auto;
+
+    /*
+      Screen se bahar nahi jayega
+    */
+    max-height:
+        calc(100vh - 30px);
+
+    overflow:hidden;
+
+    padding:
+        24px 25px 20px;
+
+    border:
+        1px solid
+        rgba(176,108,130,.16);
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            155deg,
+            #fffefb 0%,
+            #fffaf4 74%,
+            #fff7ef 100%
+        );
+
+    box-shadow:
+        0 14px 35px
+        rgba(92,37,57,.11),
+
+        inset 0 1px
+        rgba(255,255,255,.95);
+
+    display:block;
+}
+
+
+/* TOP LINE */
+
+.letter-paper::before{
+    content:"";
+
+    position:absolute;
+
+    left:25px;
+    right:25px;
+    top:9px;
+
+    height:2px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e7aabe,
+            transparent
+        );
+}
+
+
+/* HEART */
+
+.letter-paper::after{
+    content:"♡";
+
+    position:absolute;
+
+    right:15px;
+    bottom:12px;
+
+    color:#edcbd6;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:28px;
+
+    pointer-events:none;
+}
+
+
+/* DATE */
+
+.letter-date{
+    margin:0;
+
+    color:#b96d86;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
+}
+
+
+/* TITLE */
+
+.letter-paper h2{
+    position:relative;
+
+    z-index:2;
+
+    margin:
+        7px 0 11px;
+
+    color:#562a3a;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(23px,3.5vh,29px);
+
+    line-height:1.05;
+}
+
+
+/* ========================================
+   LETTER TEXT
+======================================== */
+
+.letter-paper p{
+    position:relative;
+
+    z-index:2;
+
+    margin:
+        0 0 8px;
+
+    color:#705862;
+
+    font-size:
+        clamp(11px,1.55vh,13.2px);
+
+    line-height:1.46;
+
+    user-select:text;
+}
+
+
+/* LOVE */
+
+.letter-paper .love{
+    color:#aa5573;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(11.3px,1.6vh,14px);
+
+    line-height:1.42;
+
+    margin:
+        0 0 8px;
+}
+
+
+/* SIGNATURE */
+
+.signature{
+    margin:
+        2px 0 10px !important;
+
+    color:#ab5674 !important;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(11.5px,1.65vh,14px) !important;
+
+    line-height:1.35 !important;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.back-btn{
+    display:block;
+
+    margin:
+        4px auto 0;
+
+    padding:
+        9px 19px;
+
+    border:none;
+
+    border-radius:999px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d98ca6,
+            #c16b89 47%,
+            #a34b6b
+        );
+
+    box-shadow:
+        0 8px 18px
+        rgba(151,67,97,.2),
+
+        inset 0 1px
+        rgba(255,255,255,.4);
+
+    font-size:11.5px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        transform .15s ease;
+}
+
+.back-btn:active{
+    transform:scale(.96);
+}
+
+
+/* ========================================
+   FLOATING HEARTS
+======================================== */
+
+.float-heart{
+    position:fixed;
+
+    z-index:50;
+
+    color:#d47d99;
+
+    pointer-events:none;
+
+    animation:
+        heartFloat 1.1s ease-out forwards;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translate3d(0,0,0)
+            scale(.5);
+    }
+
+    15%{
+        opacity:.7;
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translate3d(
+                var(--x),
+                -100px,
+                0
+            )
+            rotate(var(--r))
+            scale(1.15);
+    }
+}
+
+
+/* ========================================
+   TAP SPARK
+======================================== */
+
+.tap-spark{
+    position:fixed;
+
+    z-index:60;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:#dda1b7;
+
+    pointer-events:none;
+
+    animation:
+        tapSpark .45s ease forwards;
+}
+
+@keyframes tapSpark{
+
+    from{
+        opacity:.8;
+
+        transform:
+            translate3d(0,0,0);
+    }
+
+    to{
+        opacity:0;
+
+        transform:
+            translate3d(
+                var(--x),
+                var(--y),
+                0
+            )
+            scale(.1);
+    }
+}
+
+
+/* ========================================
+   SMALL HEIGHT DEVICES
+======================================== */
+
+@media(max-height:650px){
+
+    .home{
+        padding:
+            15px 18px;
+    }
+
+    .kicker{
+        margin-bottom:7px;
+
+        font-size:9px;
+    }
+
+    .title{
+        font-size:28px;
+    }
+
+    .subtitle{
+        margin:
+            8px auto 10px;
+
+        font-size:11px;
+    }
+
+    .scene{
+        width:min(78vw,285px);
+    }
+
+    .hint{
+        margin-top:9px;
+
+        font-size:10.5px;
+    }
+
+
+    /* LETTER */
+
+    .letter-screen{
+        padding:10px;
+    }
+
+    .letter-paper{
+        padding:
+            18px 19px 15px;
+    }
+
+    .letter-paper h2{
+        margin:
+            5px 0 8px;
+
+        font-size:22px;
+    }
+
+    .letter-paper p{
+        font-size:10.5px;
+
+        line-height:1.34;
+
+        margin-bottom:6px;
+    }
+
+    .letter-paper .love{
+        font-size:11px;
+
+        line-height:1.34;
+
+        margin-bottom:6px;
+    }
+
+    .signature{
+        font-size:11px !important;
+
+        margin-bottom:7px !important;
+    }
+
+    .back-btn{
+        padding:
+            8px 17px;
+
+        font-size:10.5px;
+    }
+}
+
+
+/* ========================================
+   VERY SHORT DEVICES
+======================================== */
+
+@media(max-height:560px){
+
+    .home{
+        padding:
+            10px 15px;
+    }
+
+    .kicker{
+        margin-bottom:5px;
+    }
+
+    .title{
+        font-size:25px;
+    }
+
+    .subtitle{
+        margin:
+            5px auto 7px;
+
+        font-size:10px;
+    }
+
+    .scene{
+        width:min(70vw,245px);
+    }
+
+    .hint{
+        margin-top:6px;
+
+        font-size:10px;
+    }
+
+
+    /* LETTER */
+
+    .letter-screen{
+        padding:8px;
+    }
+
+    .letter-paper{
+        padding:
+            13px 15px 11px;
+    }
+
+    .letter-date{
+        font-size:8px;
+    }
+
+    .letter-paper h2{
+        font-size:20px;
+
+        margin:
+            3px 0 5px;
+    }
+
+    .letter-paper p{
+        font-size:9.5px;
+
+        line-height:1.28;
+
+        margin-bottom:4px;
+    }
+
+    .letter-paper .love{
+        font-size:10px;
+
+        line-height:1.28;
+
+        margin-bottom:4px;
+    }
+
+    .signature{
+        font-size:9.8px !important;
+
+        margin-bottom:5px !important;
+    }
+
+    .back-btn{
+        padding:
+            7px 15px;
+
+        font-size:9.5px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     GLITTER
+======================================== -->
+
+<div
+    class="glitter"
+    id="glitter">
+</div>
+
+
+<!-- ========================================
+     START PAGE
+======================================== -->
+
+<section
+    class="home"
+    id="home"
+>
+
+
+    <div class="kicker">
+        Apke liye mera chota sa letter
+    </div>
+
+
+    <h1 class="title">
+
+        Happy Birthday<br>
+
+        <span>
+            Meri Wiffy Punu Ko ♡
+        </span>
+
+    </h1>
+
+
+    <p class="subtitle">
+
+        Apke liy kuch h envelope<br>
+
+        me joh mein chahta hun ap pdo.
+
+    </p>
+
+
+    <!-- ENVELOPE -->
+
+    <div class="scene">
+
+        <div
+            class="envelope"
+            id="envelope"
+        >
+
+
+            <div class="body"></div>
+
+
+            <div class="inside"></div>
+
+
+            <!-- CARD -->
+
+            <div
+                class="card"
+                id="card"
+            >
+
+                <h2>
+                    For Punu ❤️
+                </h2>
+
+                <p>
+                    Yhn dbao letter pdne k liy ♡
+                </p>
+
+            </div>
+
+
+            <div class="left"></div>
+
+
+            <div class="right"></div>
+
+
+            <div class="bottom"></div>
+
+
+            <div class="flap">
+
+                <div class="flap-front"></div>
+
+                <div class="flap-back"></div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="hint"
+        id="hint"
+    >
+        is envelope ko dbao pdne k liy ♡
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================
+     SECOND PAGE / LETTER
+======================================== -->
+
+<section
+    class="letter-screen"
+    id="letterScreen"
+>
+
+
+    <div class="letter-wrap">
+
+
+        <div class="letter-paper">
+
+
+            <div class="letter-date">
+                On your special day ♡
+            </div>
+
+
+            <h2>
+                Dear Punu,
+            </h2>
+
+
+            <p>
+                Happy Birthday to you apke liy mere dil me bhot khas jgh h.
+                Aj k din apke liy ek reminder h ki tum kitne khubsurat ho
+                joh exist krte ho meri life me.
+            </p>
+
+
+            <p>
+                I hope k aj ke sth apke sbhi days peaceful ho,
+                unexpected smiles, beautiful memories, and countless
+                little moments that make your heart genuinely happy.
+            </p>
+
+
+            <p>
+                Kese bhi apka mere sth hona mere liy bhot sari feelings
+                le ata h. Your smile, the way you are yourself, and even
+                the smallest things about you have a habit of staying
+                in my mind.
+            </p>
+
+
+            <p class="love">
+                Maybe I don't say it enough, but you mean more to me
+                than these few words could ever explain. ♡
+            </p>
+
+
+            <p>
+                Ap sb kuch deserve krte ho — sbhi kushiya, ache log,
+                sb kuch. Toh kbhi mt feel krna ki tum enough nhi.
+                Never stop choosing the things that make your eyes
+                light up na ki apki ankhe sujhaye.
+            </p>
+
+
+            <p>
+                Make a beautiful wish today, smile a little more,
+                laugh a little louder, and keep this day as one of
+                those memories you'll always love looking back on.
+            </p>
+
+
+            <p class="love">
+                Happy Birthday, Punu. I hope life is extra gentle
+                with you this year — because you deserve that and
+                so much more or meri gltiyo ko bhi maf krdiya krna
+                <b>Love you so much</b>. ♡
+            </p>
+
+
+            <p class="signature">
+                With lots of love,<br>
+                who cares about you and loves about you apka kuku ♡
+            </p>
+
+
+            <button
+                class="back-btn"
+                id="backBtn"
+            >
+                Back to envelope ♡
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================
+     MUSIC
+======================================== -->
+
+<audio
+    id="themeSong"
+    src="theme.mp3"
+    loop
+    preload="auto"
+></audio>
+
+
+
+<script>
+
+/* ========================================
+   ELEMENTS
+======================================== */
+
+const envelope =
+    document.getElementById("envelope");
+
+const card =
+    document.getElementById("card");
+
+const home =
+    document.getElementById("home");
+
+const letterScreen =
+    document.getElementById("letterScreen");
+
+const backBtn =
+    document.getElementById("backBtn");
+
+const hint =
+    document.getElementById("hint");
+
+const themeSong =
+    document.getElementById("themeSong");
+
+const glitter =
+    document.getElementById("glitter");
+
+
+let isOpen = false;
+
+let moving = false;
+
+
+/* ========================================
+   MUSIC
+======================================== */
+
+function startMusic(){
+
+    if(themeSong.paused){
+
+        themeSong
+            .play()
+            .catch(()=>{});
+
+    }
+
+}
+
+
+/*
+  Browser autoplay policy ki wajah se
+  kuch phones par sound first tap ke
+  baad hi start hoga.
+*/
+
+window.addEventListener(
+    "load",
+    startMusic
+);
+
+document.addEventListener(
+    "pointerdown",
+    startMusic,
+    {once:true}
+);
+
+
+/* ========================================
+   GLITTER
+======================================== */
+
+for(
+    let i = 0;
+    i < 20;
+    i++
+){
+
+    const spark =
+        document.createElement("div");
+
+    spark.className =
+        "spark";
+
+    spark.style.left =
+        Math.random() * 100 + "%";
+
+    spark.style.animationDuration =
+        (
+            8 +
+            Math.random() * 10
+        ) + "s";
+
+    spark.style.animationDelay =
+        (
+            -Math.random() * 16
+        ) + "s";
+
+    glitter.appendChild(spark);
+
+}
+
+
+/* ========================================
+   ENVELOPE CLICK
+======================================== */
+
+envelope.addEventListener(
+    "click",
+    function(e){
+
+        /*
+          Card par click hone par
+          envelope close/open na ho.
+        */
+
+        if(
+            e.target.closest(".card") ||
+            moving
+        ){
+            return;
+        }
+
+
+        startMusic();
+
+
+        /* OPEN */
+
+        if(!isOpen){
+
+            moving = true;
+
+            envelope.classList.add(
+                "open"
+            );
+
+            isOpen = true;
+
+            hint.textContent =
+                "Tap the card to read letter ♡";
+
+
+            setTimeout(
+                ()=>{
+                    moving = false;
+                },
+                1600
+            );
+
+        }
+
+
+        /* CLOSE */
+
+        else{
+
+            moving = true;
+
+            envelope.classList.remove(
+                "open"
+            );
+
+            isOpen = false;
+
+            hint.textContent =
+                "Tap the envelope to open ♡";
+
+
+            setTimeout(
+                ()=>{
+                    moving = false;
+                },
+                1450
+            );
+
+        }
+
+    }
+);
+
+
+/* ========================================
+   CARD -> LETTER
+======================================== */
+
+card.addEventListener(
+    "click",
+    function(e){
+
+        e.stopPropagation();
+
+
+        if(!isOpen){
+            return;
+        }
+
+
+        home.classList.add(
+            "leave"
+        );
+
+
+        setTimeout(
+            ()=>{
+
+                letterScreen.classList.add(
+                    "visible"
+                );
+
+                createHearts();
+
+            },
+            450
+        );
+
+    }
+);
+
+
+/* ========================================
+   BACK TO ENVELOPE
+======================================== */
+
+backBtn.addEventListener(
+    "click",
+    function(){
+
+        letterScreen.classList.remove(
+            "visible"
+        );
+
+
+        setTimeout(
+            ()=>{
+
+                envelope.classList.remove(
+                    "open"
+                );
+
+                isOpen = false;
+
+                hint.textContent =
+                    "is envelope ko dbao pdne k liy ♡";
+
+                home.classList.remove(
+                    "leave"
+                );
+
+            },
+            500
+        );
+
+    }
+);
+
+
+/* ========================================
+   FLOATING HEARTS
+======================================== */
+
+function createHearts(){
+
+    for(
+        let i = 0;
+        i < 7;
+        i++
+    ){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "float-heart";
+
+
+        heart.textContent =
+            Math.random() > .45
+            ? "♡"
+            : "♥";
+
+
+        heart.style.left =
+            (
+                38 +
+                Math.random() * 24
+            ) + "vw";
+
+
+        heart.style.top =
+            (
+                52 +
+                Math.random() * 8
+            ) + "vh";
+
+
+        heart.style.fontSize =
+            (
+                12 +
+                Math.random() * 10
+            ) + "px";
+
+
+        heart.style.setProperty(
+            "--x",
+            (
+                (Math.random()-.5) *
+                75
+            ) + "px"
+        );
+
+
+        heart.style.setProperty(
+            "--r",
+            (
+                (Math.random()-.5) *
+                40
+            ) + "deg"
+        );
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(
+            ()=>{
+                heart.remove();
+            },
+            1250
+        );
+
+    }
+
+}
+
+
+/* ========================================
+   TAP SPARKS
+======================================== */
+
+document.addEventListener(
+    "pointerdown",
+    e => {
+
+        for(
+            let i = 0;
+            i < 3;
+            i++
+        ){
+
+            const particle =
+                document.createElement("div");
+
+            particle.className =
+                "tap-spark";
+
+
+            particle.style.left =
+                e.clientX + "px";
+
+
+            particle.style.top =
+                e.clientY + "px";
+
+
+            const angle =
+                Math.random()
+                * Math.PI
+                * 2;
+
+
+            const distance =
+                15 +
+                Math.random() * 20;
+
+
+            particle.style.setProperty(
+                "--x",
+                Math.cos(angle)
+                * distance
+                + "px"
+            );
+
+
+            particle.style.setProperty(
+                "--y",
+                Math.sin(angle)
+                * distance
+                + "px"
+            );
+
+
+            document.body.appendChild(
+                particle
+            );
+
+
+            setTimeout(
+                ()=>{
+                    particle.remove();
+                },
+                450
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+  </html>
